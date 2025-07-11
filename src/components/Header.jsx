@@ -11,7 +11,7 @@ const Header = () => {
       <nav style={styles.nav}>
         <button style={styles.button}>Solver</button>
         <button style={styles.button}>Servicios</button>
-        <button style={styles.button}><Contacto></Contacto></button>
+        <button style={styles.button}>Contacto</button>
       </nav>
       <div style={styles.profileContainer}>
         <img src={profilePic} alt="Profile" style={styles.profile} />

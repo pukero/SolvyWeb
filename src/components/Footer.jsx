@@ -14,11 +14,11 @@ const Footer = () => {
       <div style={styles.textBlocks}>
         <span style={styles.textBlock}>© 2025 - Solvy. Todos los derechos reservados.</span>
         <div style={styles.textWithIcon}>
-          <span style={styles.textBlock}>Solvy</span>
+          <span style={styles.textBlock}>@Solvy</span>
           <img src={vectorIcon} alt="Vector" style={styles.icon} />
         </div>
         <div style={styles.textWithIcon}>
-          <span style={styles.textBlock}>Solvy</span>
+          <span style={styles.textBlock}>@Solvy</span>
           <img src={groupIcon} alt="Group" style={styles.icon} />
         </div>
         <div style={styles.textWithIcon}>
@@ -51,9 +51,10 @@ const styles = {
   },
   textBlocks: {
     display: 'flex',
-    gap: '20px',
-    marginLeft: '20px',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    marginLeft: '20px',
+    flex: '1',
   },
   textBlock: {
     fontSize: '0.9rem',
