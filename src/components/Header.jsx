@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
 import profilePic from '../assets/Group 87.png';
 
@@ -9,9 +10,9 @@ const Header = () => {
         <img src={logo} alt="Logo" style={styles.logo} />
       </div>
       <nav style={styles.nav}>
-        <button style={styles.button}>Solver</button>
-        <button style={styles.button}>Servicios</button>
-        <button style={styles.button}>Contacto</button>
+        <Link to="/" style={styles.button}>Solver</Link>
+        <Link to="/servicios" style={styles.button}>Servicios</Link>
+        <Link to="/contacto" style={styles.button}>Contacto</Link>
       </nav>
       <div style={styles.profileContainer}>
         <img src={profilePic} alt="Profile" style={styles.profile} />
@@ -50,6 +51,10 @@ const styles = {
     color: 'white',
     border: '1px solid white',
     borderRadius: '4px',
+    textDecoration: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   profileContainer: {
     flex: '0 0 auto',
