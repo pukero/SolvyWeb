@@ -19,6 +19,12 @@ const Contacto = () => {
     e.preventDefault();
     // Aquí se podría manejar el envío del formulario
     alert('Consulta enviada');
+    setFormData({
+      nombre: '',
+      apellido: '',
+      servicio: '',
+      mensaje: '',
+    });
   };
 
   return (
@@ -68,13 +74,12 @@ const Contacto = () => {
         </label>
         <label style={styles.label}>
           Mensaje
-          <input
-            type="text"
+          <textarea
             name="mensaje"
             placeholder="Ingrese su mensaje"
             value={formData.mensaje}
             onChange={handleChange}
-            style={styles.input}
+            style={styles.textarea}
             required
           />
         </label>
@@ -87,69 +92,95 @@ const Contacto = () => {
 const styles = {
   container: {
     maxWidth: 600,
-    margin: '0 auto',
-    padding: 20,
+    margin: '40px auto',
+    padding: 30,
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    color: '#0079B5',
   },
   title: {
-    fontSize: '2.5rem',
+    fontSize: '2.8rem',
     marginBottom: 10,
-    color: '#000000',
+    color: '#0079B5',
     textAlign: 'center',
     textTransform: 'uppercase',
+    fontWeight: '700',
   },
   divider: {
     border: 'none',
-    borderBottom: '2px solid #000000',
-    marginBottom: 10,
+    borderBottom: '3px solid #0079B5',
+    marginBottom: 15,
     width: '100%',
     maxWidth: 600,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
   subtitle: {
-    fontSize: '1.2rem',
-    marginBottom: 20,
-    color: '#000000',
+    fontSize: '1.4rem',
+    marginBottom: 25,
+    color: '#0079B5',
     textAlign: 'center',
+    fontWeight: '500',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: 15,
+    gap: 20,
   },
   label: {
     display: 'flex',
     flexDirection: 'column',
-    fontSize: '1rem',
-    color: '#000000',
+    fontSize: '1.1rem',
+    color: '#0079B5',
+    fontWeight: '600',
   },
   input: {
-    marginTop: 5,
-    padding: 8,
-    fontSize: '1.2rem',
-    borderRadius: 4,
-    border: '1px solid #0079B5',
-    backgroundColor: '#0079B5',
-    color: '#000000',
+    marginTop: 8,
+    padding: 12,
+    fontSize: '1.1rem',
+    borderRadius: 8,
+    border: '2px solid #0079B5',
+    backgroundColor: '#fff',
+    color: '#333',
+    outline: 'none',
+    transition: 'border-color 0.3s',
   },
   select: {
-    marginTop: 5,
-    padding: 8,
-    fontSize: '1.2rem',
-    borderRadius: 4,
-    border: '1px solid #0079B5',
-    backgroundColor: '#0079B5',
-    color: '#000000',
+    marginTop: 8,
+    padding: 12,
+    fontSize: '1.1rem',
+    borderRadius: 8,
+    border: '2px solid #0079B5',
+    backgroundColor: '#fff',
+    color: '#333',
+    outline: 'none',
+    transition: 'border-color 0.3s',
+  },
+  textarea: {
+    marginTop: 8,
+    padding: 12,
+    fontSize: '1.1rem',
+    borderRadius: 8,
+    border: '2px solid #0079B5',
+    backgroundColor: '#fff',
+    color: '#333',
+    outline: 'none',
+    resize: 'vertical',
+    minHeight: 100,
+    transition: 'border-color 0.3s',
   },
   button: {
-    marginTop: 10,
-    padding: 12,
-    fontSize: '1rem',
-    borderRadius: 4,
+    marginTop: 15,
+    padding: 14,
+    fontSize: '1.2rem',
+    borderRadius: 8,
     border: 'none',
-    backgroundColor: '#000000',
-    color: '#FFFFFF',
+    backgroundColor: '#0079B5',
+    color: '#fff',
     cursor: 'pointer',
+    fontWeight: '700',
+    transition: 'background-color 0.3s',
   },
 };
 
