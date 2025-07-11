@@ -2,67 +2,38 @@ import React, { useState } from 'react';
 import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
 
 const Login = () => {
-  const [form, setForm] = useState({ usuario: '', password: '' });
-  const [showPassword, setShowPassword] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí va la lógica de autenticación
-    alert('¡Bienvenido a Solvy!');
   };
 
   return (
     <div style={styles.bg}>
       <div style={styles.card}>
-        <div style={styles.logoBox}>
-          
-                  <img src={logo} alt="Logo" style={styles.logo} />
-                
-        </div>
-        <h2 style={styles.title}>Bienvenido a Solvy</h2>
-        <p style={styles.subtitle}>Inicia sesión para continuar</p>
+          <img src={logo} alt="Logo" style={styles.logo} />
+          <h2 style={styles.title}>Bienvenido a Solvy</h2>
+          <p style={styles.subtitle}>Inicia sesión para continuar</p>
         <form style={styles.form} onSubmit={handleSubmit}>
           <div style={styles.inputGroup}>
-            <span style={styles.icon}>
-              <svg width="20" height="20" fill="#0079B5"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm0 2c-4.418 0-8 2.239-8 5v1a1 1 0 001 1h14a1 1 0 001-1v-1c0-2.761-3.582-5-8-5z"/></svg>
-            </span>
             <input
               type="text"
               name="usuario"
-              value={form.usuario}
-              onChange={handleChange}
               style={styles.input}
               placeholder="Usuario"
-              autoComplete="username"
               required
             />
           </div>
           <div style={styles.inputGroup}>
-            <span style={styles.icon}>
-              <svg width="20" height="20" fill="#0079B5"><path d="M5 8V6a5 5 0 1110 0v2a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2zm2-2a3 3 0 116 0v2H7V6zm-2 4v6h10v-6H5z"/></svg>
-            </span>
             <input
-              type={showPassword ? "text" : "password"}
+              type={"password"}
               name="password"
-              value={form.password}
-              onChange={handleChange}
               style={styles.input}
               placeholder="Contraseña"
-              autoComplete="current-password"
               required
             />
             <button
               type="button"
               style={styles.showBtn}
-              onClick={() => setShowPassword(s => !s)}
-              tabIndex={-1}
             >
-              {showPassword ? '🙈' : '👁️'}
             </button>
           </div>
           <button type="submit" style={styles.button}>Ingresar</button>
@@ -77,7 +48,7 @@ const Login = () => {
 
 const styles = {
   bg: {
-    minHeight: '100vh',
+    minHeight: '90vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -96,10 +67,7 @@ const styles = {
     animation: 'fadeIn 0.8s',
   },
   logoBox: {
-    
-
     marginBottom: 18,
-    background: 'linear-gradient(135deg, #0079B5 60%, #00C6FB 100%)',
     borderRadius: '50%',
     padding: 8,
     boxShadow: '0 2px 8px rgba(0,121,181,0.12)',
@@ -183,7 +151,7 @@ const styles = {
     transition: 'color 0.2s',
   },
   logo: {
-    height: 50,
+    height: 80,
     width: 'auto',
   }
 };

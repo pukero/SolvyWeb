@@ -4,7 +4,7 @@ import Layout from './components/Layout';
 import LandingPage from './pages/LandingPage';
 import Contacto from './pages/Contacto';
 import Login from './pages/Login';
-
+import Registrarse from './pages/Registrarse';
 function App() {
   return (
     <BrowserRouter>
@@ -13,7 +13,7 @@ function App() {
           <Route index element={<LandingPage />} />
           <Route path="contacto" element={<Contacto />} />
                   <Route path="login" element={<Login />} />
-
+                  <Route path="registrarse" element={<Registrarse/>} />
         </Route>
       </Routes>
     </BrowserRouter>
