@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import LandingPage from './pages/LandingPage';
 import Contacto from './pages/Contacto';
 import Login from './pages/Login';
+import Servicios from './pages/Servicios';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<LandingPage />} />
           <Route path="contacto" element={<Contacto />} />
-                  <Route path="login" element={<Login />} />
+          <Route path="servicios" element={<Servicios />} />
+          <Route path="login" element={<Login />} />
 
         </Route>
       </Routes>
