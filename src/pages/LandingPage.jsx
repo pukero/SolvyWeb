@@ -5,7 +5,11 @@ const LandingPage = () => {
     <div style={styles.container}>
       <h1 style={styles.title}>Bienvenido a Solvy</h1>
       <p style={styles.subtitle}>Tu plataforma de soluciones digitales</p>
-    </div>
+      <div style={styles.buttonGroup}>
+        <a href="/registrarse" style={styles.bigButton}>Registrarse</a>
+        <a href="/login" style={styles.bigButton}>Iniciar sesión</a>
+      </div>
+       </div>
   );
 };
 

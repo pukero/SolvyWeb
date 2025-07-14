@@ -137,7 +137,6 @@ const styles = {
     fontSize: '1.05rem',
     color: '#222',
     borderRadius: 12,
-    border: '2px solid #e0e7ef',
     transition: 'box-shadow 0.2s, border 0.2s',
     marginBottom: 0,
     width: '100%',
@@ -145,7 +144,6 @@ const styles = {
   },
   inputFull: {
     gridColumn: '1 / span 2',
-    border: 'none',
     outline: 'none',
     background: '#f3f8fc',
     padding: '15px 14px',
