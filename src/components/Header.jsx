@@ -32,6 +32,7 @@ const Header = () => {
 
 const styles = {
   header: {
+    
     display: 'flex',
     alignItems: 'center',
     justifyContent: ' ',
@@ -42,7 +43,7 @@ const styles = {
     position: 'sticky',
     top: 0,
     zIndex: 10,
-    backdropFilter: 'blur(4px)',
+    backdropFilter: 'blur(3px)',
     width: '100%',
   },
   logoContainer: {

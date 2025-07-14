@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 const Layout = () => {
   return (
-    <div style={styles.container}>
+    <div style={styles.bg}>
       <Header />
       <main style={styles.main}>
         <Outlet />
@@ -16,10 +16,11 @@ const Layout = () => {
 };
 
 const styles = {
-  container: {
+  bg: {
+    minHeight: '100vh',
+    background: '#f6fbfc', // Fondo integrado para toda la web
     display: 'flex',
     flexDirection: 'column',
-    minHeight: '100vh',
   },
   main: {
     flex: '1',
