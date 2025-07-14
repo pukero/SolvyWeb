@@ -1,86 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
-import profilePic from '../assets/Group 87.png';
-
 
 const Header = () => {
   return (
-    <>
-
     <header style={styles.header}>
-
-      <div style={styles.logoContainer}>
-                        <img src={logo} alt="Logo" style={styles.logo} />
-
+      <div style={styles.logoBrand}>
+        <Link to="/" style={styles.logoLink}>
+          <img src={logo} alt="Solvy Logo" style={styles.logo}/>
+        </Link>
       </div>
-      <div style={styles.centerNavContainer}>
-        <nav style={styles.nav}>
-          <Link to="/" style={styles.link}>Solver</Link>
-          <Link to="/servicios" style={styles.link}>Servicios</Link>
-          <Link to="/contacto" style={styles.link}>Contacto</Link>
-        </nav>
-      </div>
-      <div style={styles.profileContainer}>
-        <img src={profilePic} alt="Profile" style={styles.profile} />
+      <nav style={styles.nav}>
+        <Link to="/" style={styles.link}>Solver</Link>
+        <Link to="/servicios" style={styles.link}>Servicios</Link>
+        <Link to="/contacto" style={styles.link}>Contacto</Link>
+      </nav>
+      <div style={styles.actions}>
+        <Link to="/login" style={styles.loginBtn}>Login</Link>
+        <Link to="/registrarse" style={styles.signUpBtn}>Registrarse</Link>
       </div>
     </header>
-    </>
   );
 };
 
-
 const styles = {
   header: {
-    
     display: 'flex',
     alignItems: 'center',
-    justifyContent: ' ',
-    padding: '30px', // más espacio arriba
+    justifyContent: 'center',
+    padding: '28px 5vw 0 5vw',
     background: 'transparent',
-    boxShadow: 'none', // sin línea ni sombra abajo
+    marginBottom: '32px',
     fontFamily: "'Poppins', 'Segoe UI', Arial, sans-serif",
     position: 'sticky',
     top: 0,
     zIndex: 10,
     backdropFilter: 'blur(3px)',
     width: '100%',
+    gap: '48px',
   },
-  logoContainer: {
-    flex: '0 0 auto',
+  logoBrand: {
     display: 'flex',
     alignItems: 'center',
-    gap: 10,
+    width: 130
+  },
+  logoLink: {
+    display: 'flex',
+    alignItems: 'center',
+    textDecoration: 'none',
   },
   logo: {
-    height: 45, // achicado
+    height: 55,
     width: 'auto',
-  },
-  brand: {
-    fontFamily: "'Poppins', 'Segoe UI', Arial, sans-serif",
-    fontWeight: 700,
-    fontSize: '1.15rem',
-    color: '#0079B5',
-    letterSpacing: '1px',
-    marginLeft: 6,
-    userSelect: 'none',
-  },
-  centerNavContainer: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   nav: {
     display: 'flex',
-    gap: '24px',
-    fontSize: '1.08rem',
-    fontWeight: 500,
-    fontFamily: "'Poppins', 'Segoe UI', Arial, sans-serif",
+    gap: 50,
+    flex: 1,
   },
   link: {
-    color: '#0079B5', // azul
+    color: '#222',
+    fontWeight: 500,
     textDecoration: 'none',
+    fontSize: '1.01rem',
     padding: '8px 18px',
     background: '#e0f3fc',
     borderRadius: '12px',
@@ -89,25 +71,32 @@ const styles = {
     border: '1.5px solid #cce6fa',
     transition: 'background 0.2s, color 0.2s, box-shadow 0.2s',
     display: 'flex',
-    alignItems: 'center',
   },
-  profileContainer: {
-    flex: '0 0 auto',
+  actions: {
     display: 'flex',
+    gap: 12,
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    minWidth: 48,
   },
-  profile: {
-    height: 40,
-    width: 40,
-    borderRadius: '50%',
-    boxShadow: '0 2px 8px #e0e7ef33',
-    border: '2px solid #e0e7ef',
+  loginBtn: {
+    padding: '8px 22px',
+    border: '1.5px solid #e0e7ef',
+    borderRadius: '12px',
     background: '#fff',
-    objectFit: 'cover',
+    color: '#0079B5',
+    textDecoration: 'none',
+    fontSize: '1.01rem',
+    fontWeight: 600,
   },
-};
-
+  signUpBtn: {
+    padding: '8px 22px',
+   borderRadius: '12px',
+    background: '#0079B5',
+    color: '#fff',
+    fontWeight: 600,
+    textDecoration: 'none',
+    fontSize: '1.01rem',
+    border: 'none'
+  }
+  };
 
 export default Header;

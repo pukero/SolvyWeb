@@ -133,7 +133,7 @@ const styles = {
     fontWeight: 600,
     borderRadius: 8,
     border: 'none',
-    background: 'linear-gradient(90deg, #0079B5 60%, #00C6FB 100%)',
+background: '#0079B5',
     color: '#fff',
     cursor: 'pointer',
     boxShadow: '0 2px 8px rgba(0,121,181,0.10)',
