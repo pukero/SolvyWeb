@@ -68,7 +68,6 @@ const styles = {
     borderRadius: '12px',
     fontWeight: 600,
     boxShadow: '0 2px 8px #e0e7ef33',
-    border: '1.5px solid #cce6fa',
     transition: 'background 0.2s, color 0.2s, box-shadow 0.2s',
     display: 'flex',
   },

@@ -7,8 +7,8 @@ const LandingPage = () => {
         <section style={styles.left}>
           <h1 style={styles.title}>
           Ofrecé tu servicio <br/>
-          Ganás por hacerlo<br/>
-          Elegís cuándo trabajar
+          Ganá por hacerlo<br/>
+          Elegí cuando trabajar
           </h1>
           <p style={styles.subtitle}>
             Ayudamos a trabajadores independientes a encontrar clientes, organizar sus servicios y ganar por cada trabajo.          </p>
@@ -90,8 +90,8 @@ const styles = {
   input: {
     flex: 1,
     padding: '14px 12px',
-    fontSize: '1.04rem',
-    borderRadius: 14,
+    fontSize: '1.01rem',
+    borderRadius: 12,
     border: 'none',
     outline: 'none',
     background: '#f6fbfc',
@@ -104,10 +104,10 @@ const styles = {
     padding: '13px 30px',
     background: '#0079B5',
     color: '#fff',
-    borderRadius: 14,
+    borderRadius: 12,
     border: 'none',
     fontWeight: 700,
-    fontSize: '1.08rem',
+    fontSize: '1.01rem',
     cursor: 'pointer',
     boxShadow: '0 2px 10px #0079B533',
     display: 'flex',
