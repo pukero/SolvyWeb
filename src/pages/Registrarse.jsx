@@ -21,7 +21,7 @@ const Registrarse = () => {
               <input type="text" name="direccion" placeholder="Dirección" style={styles.inputFull} />
               <div style={styles.checkboxRow}>
                 <label style={styles.checkboxLabel}>
-                  <input type="checkbox" name="movilidad_propia" style={styles.checkbox} />
+                  <input type="checkbox" name="movilidad_propia" style={styles.checkbox} required/>
                   ¿Tenés movilidad propia?
                 </label>
                 <input type="text" name="tipo_vehiculo" placeholder="Tipo de vehículo" style={styles.input} />

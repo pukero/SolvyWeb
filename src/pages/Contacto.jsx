@@ -8,7 +8,7 @@ const Contacto = () => {
     mensaje: '',
   });
 
-  const servicios = ['Limpieza', 'Gasista', 'Plomero', 'Electricista', 'Jardinería'];
+  const servicios = ['Limpieza', 'Gasista', 'Plomero', 'Electricista', 'Jardinería','Cocina','Lavado de auto','Mudancero', 'Fumigacion', 'Cerrajeria', 'Instalador', 'Pintor'];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
