@@ -6,6 +6,7 @@ import Contacto from './pages/Contacto';
 import Login from './pages/Login';
 import Registrarse from './pages/Registrarse';
 import Servicios from './pages/Servicios';
+import Solver from './pages/Solver'; 
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
                   <Route path="login" element={<Login />} />
                   <Route path="registrarse" element={<Registrarse/>} />
                   <Route path="servicios" element={<Servicios/>} />
+          <Route path="solver" element={<Solver/>} />
 
         </Route>
       </Routes>

@@ -11,7 +11,8 @@ const Header = () => {
         </Link>
       </div>
       <nav style={styles.nav}>
-        <Link to="/" style={styles.link}>Solver</Link>
+        <Link to="/solver" style={styles.link}>Solver</Link>
+        
         <Link to="/servicios" style={styles.link}>Servicios</Link>
         <Link to="/contacto" style={styles.link}>Contacto</Link>
       </nav>
@@ -60,7 +61,6 @@ const styles = {
   },
   link: {
     color: '#222',
-    fontWeight: 500,
     textDecoration: 'none',
     fontSize: '1.01rem',
     padding: '8px 18px',
