@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
 import vectorIcon from '../assets/Vector.png';
 import groupIcon from '../assets/Group.png';
@@ -8,26 +9,77 @@ import phoneIcon from '../assets/Vector (2).png';
 const Footer = () => {
   return (
     <footer style={styles.footer}>
-      <div style={styles.logoContainer}>
-        <img src={logo} alt="Logo" style={styles.logo} />
-      </div>
-      <div style={styles.textBlocks}>
-        <span style={styles.textBlock}>© 2025 - Solvy. Todos los derechos reservados.</span>
-        <div style={styles.textWithIcon}>
-          <span style={styles.textBlock}>@Solvy</span>
-          <img src={vectorIcon} alt="Vector" style={styles.icon} />
+      <div style={styles.container}>
+        {/* Sección principal */}
+        <div style={styles.mainSection}>
+          {/* Logo y descripción */}
+          <div style={styles.brandSection}>
+            <img src={logo} alt="Solvy Logo" style={styles.logo} />
+            <p style={styles.description}>
+              Conectamos profesionales independientes con clientes que necesitan servicios de calidad. 
+              Tu éxito es nuestro compromiso.
+            </p>
+            <div style={styles.socialLinks}>
+              <a href="#" style={styles.socialLink}>
+                <img src={vectorIcon} alt="Twitter" style={styles.socialIcon} />
+              </a>
+              <a href="#" style={styles.socialLink}>
+                <img src={groupIcon} alt="Instagram" style={styles.socialIcon} />
+              </a>
+              <a href="#" style={styles.socialLink}>
+                <img src={emailIcon} alt="Email" style={styles.socialIcon} />
+              </a>
+            </div>
+          </div>
+
+          {/* Enlaces rápidos */}
+          <div style={styles.linksSection}>
+            <h3 style={styles.sectionTitle}>Enlaces Rápidos</h3>
+            <Link to="/solver" style={styles.footerLink}>Solver</Link>
+            <Link to="/servicios" style={styles.footerLink}>Servicios</Link>
+            <Link to="/contacto" style={styles.footerLink}>Contacto</Link>
+            <Link to="/login" style={styles.footerLink}>Iniciar Sesión</Link>
+          </div>
+
+          {/* Servicios */}
+          <div style={styles.linksSection}>
+            <h3 style={styles.sectionTitle}>Servicios</h3>
+            <a href="#" style={styles.footerLink}>Limpieza Residencial</a>
+            <a href="#" style={styles.footerLink}>Limpieza Comercial</a>
+            <a href="#" style={styles.footerLink}>Limpieza Industrial</a>
+            <a href="#" style={styles.footerLink}>Mantenimiento</a>
+          </div>
+
+          {/* Contacto */}
+          <div style={styles.contactSection}>
+            <h3 style={styles.sectionTitle}>Contacto</h3>
+            <div style={styles.contactItem}>
+              <img src={phoneIcon} alt="Phone" style={styles.contactIcon} />
+              <span style={styles.contactText}>+549 11 1234-5678</span>
+            </div>
+            <div style={styles.contactItem}>
+              <img src={emailIcon} alt="Email" style={styles.contactIcon} />
+              <span style={styles.contactText}>Solvy@gmail.com</span>
+            </div>
+            <div style={styles.contactItem}>
+              <span style={styles.contactText}>Buenos Aires, Argentina</span>
+            </div>
+          </div>
         </div>
-        <div style={styles.textWithIcon}>
-          <span style={styles.textBlock}>@Solvy</span>
-          <img src={groupIcon} alt="Group" style={styles.icon} />
-        </div>
-        <div style={styles.textWithIcon}>
-          <span style={styles.textBlock}>Solvy@gmail.com</span>
-          <img src={emailIcon} alt="Email" style={styles.icon} />
-        </div>
-        <div style={styles.textWithIcon}>
-          <span style={styles.textBlock}>+549 11 1234-5678</span>
-          <img src={phoneIcon} alt="Phone" style={styles.icon} />
+
+        {/* Línea divisoria */}
+        <div style={styles.divider}></div>
+
+        {/* Sección inferior */}
+        <div style={styles.bottomSection}>
+          <div style={styles.copyright}>
+            <span style={styles.copyrightText}>© 2025 Solvy. Todos los derechos reservados.</span>
+          </div>
+          <div style={styles.legalLinks}>
+            <a href="#" style={styles.legalLink}>Política de Privacidad</a>
+            <a href="#" style={styles.legalLink}>Términos de Servicio</a>
+            <a href="#" style={styles.legalLink}>Cookies</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -36,38 +88,124 @@ const Footer = () => {
 
 const styles = {
   footer: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '15px 20px',
-    backgroundColor: '#0079B5',
-    color: 'white',
+    background: '#1d3443',
+    color: '#ffffff',
+    fontFamily: "'Poppins', 'Segoe UI', Arial, sans-serif",
+    marginTop: 'auto',
   },
-  logoContainer: {
-    flex: '0 0 auto',
+  container: {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '60px 5vw 30px 5vw',
+  },
+  mainSection: {
+    display: 'grid',
+    gridTemplateColumns: '2fr 1fr 1fr 1fr',
+    gap: '40px',
+    marginBottom: '40px',
+  },
+  brandSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px',
   },
   logo: {
-    height: 40,
+    height: '50px',
     width: 'auto',
+    filter: 'brightness(0) invert(1)',
   },
-  textBlocks: {
+  description: {
+    fontSize: '0.95rem',
+    lineHeight: '1.6',
+    color: '#b0bec5',
+    maxWidth: '300px',
+  },
+  socialLinks: {
+    display: 'flex',
+    gap: '16px',
+    marginTop: '8px',
+  },
+  socialLink: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '40px',
+    height: '40px',
+    background: '#0079B5',
+    borderRadius: '50%',
+    transition: 'background 0.3s, transform 0.2s',
+  },
+  socialIcon: {
+    height: '18px',
+    width: '18px',
+    filter: 'brightness(0) invert(1)',
+  },
+  linksSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '12px',
+  },
+  sectionTitle: {
+    fontSize: '1.1rem',
+    fontWeight: 600,
+    color: '#ffffff',
+    marginBottom: '16px',
+  },
+  footerLink: {
+    color: '#b0bec5',
+    textDecoration: 'none',
+    fontSize: '0.9rem',
+    transition: 'color 0.3s',
+    padding: '4px 0',
+  },
+  contactSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+  },
+  contactItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+  },
+  contactIcon: {
+    height: '16px',
+    width: '16px',
+    filter: 'brightness(0) invert(1)',
+  },
+  contactText: {
+    fontSize: '0.9rem',
+    color: '#b0bec5',
+  },
+  divider: {
+    height: '1px',
+    background: 'linear-gradient(90deg, transparent, #0079B5, transparent)',
+    margin: '40px 0',
+  },
+  bottomSection: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginLeft: '20px',
+    flexWrap: 'wrap',
+    gap: '20px',
+  },
+  copyright: {
     flex: '1',
   },
-  textBlock: {
-    fontSize: '0.9rem',
-    color: 'white',
+  copyrightText: {
+    fontSize: '0.85rem',
+    color: '#90a4ae',
   },
-  textWithIcon: {
+  legalLinks: {
     display: 'flex',
-    alignItems: 'center',
-    gap: '5px',
+    gap: '24px',
+    flexWrap: 'wrap',
   },
-  icon: {
-    height: 16,
-    width: 16,
+  legalLink: {
+    color: '#90a4ae',
+    textDecoration: 'none',
+    fontSize: '0.85rem',
+    transition: 'color 0.3s',
   },
 };
 
