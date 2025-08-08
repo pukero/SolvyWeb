@@ -11,6 +11,7 @@ const images = [img1, img2, img3, img4, img5];
 
 const Servicios = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -24,22 +25,30 @@ const Servicios = () => {
     );
   };
 
+  const handleTilt = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
+    const maxDeg = 10;
+    const rotateY = (x - 0.5) * maxDeg * 2;
+    const rotateX = -(y - 0.5) * maxDeg * 2;
+    setTilt({ rotateX, rotateY });
+  };
+
+  const resetTilt = () => setTilt({ rotateX: 0, rotateY: 0 });
+
     return (
     <div style={styles.container}>
       <h1 style={styles.title}>Servicios</h1>
 
       <div style={styles.carousel}>
-        <button onClick={prevSlide} style={styles.button} aria-label="Previous Slide">
-          &#10094;
-        </button>
         <img
           src={images[currentIndex]}
           alt={`Servicio ${currentIndex + 1}`}
           style={styles.image}
         />
-        <button onClick={nextSlide} style={styles.button} aria-label="Next Slide">
-          &#10095;
-        </button>
+        <button onClick={prevSlide} style={{...styles.carouselButton, ...styles.carouselButtonLeft}} aria-label="Previous Slide">&#10094;</button>
+        <button onClick={nextSlide} style={{...styles.carouselButton, ...styles.carouselButtonRight}} aria-label="Next Slide">&#10095;</button>
       </div>
 
       {/* SUBTITLE CENTRADO Y GRANDE */}
@@ -108,11 +117,41 @@ const Servicios = () => {
     <p style={styles.cardDesc}>Pintura profesional para interiores y exteriores.</p>
   </div>
 </div>
-      {/* ESTILO HERO SECTION */}
-      <div style={styles.heroSection}>
-        
-        <img src={serviciospantalla} alt="Servicios App" style={styles.phoneMockup} />
-      </div>
+      {/* ESTILO HERO SECTION - Modernizado */}
+      <section style={styles.heroWrapper}>
+        <div style={styles.heroSection}>
+          <div style={styles.glassCard}>
+            <h2 style={styles.ctaTitle}>Gestioná tus servicios con Solvy</h2>
+            <p style={styles.ctaSubtitle}>
+              Reservá profesionales verificados en minutos. Seguimiento en tiempo real,
+              soporte 24/7 y pagos seguros.
+            </p>
+           
+          </div>
+
+          <div
+            style={styles.phoneWrapper}
+            onMouseMove={handleTilt}
+            onMouseLeave={resetTilt}
+          >
+            <div style={styles.phoneGlow} />
+            <img
+              src={serviciospantalla}
+              alt="Servicios App"
+              style={{
+                ...styles.phoneMockup,
+                transform: `rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+              }}
+            />
+
+            <div style={{ ...styles.badge, ...styles.badgeTopLeft }}>⭐ 4.9 / 5</div>
+            <div style={{ ...styles.badge, ...styles.badgeTopRight }}>⚡ 24/7</div>
+            <div style={{ ...styles.badge, ...styles.badgeBottomLeft }}>🔒 Pago seguro</div>
+          </div>
+        </div>
+
+        <style>{`@keyframes floatUpDown { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }`}</style>
+      </section>
     </div>
   );
 };
@@ -124,6 +163,8 @@ const styles = {
   padding: 20,
   textAlign: 'center',
   color: '#0079B5',
+  width: '100%',
+  overflowX: 'hidden',
 },
 title: {
   fontSize: '4rem',
@@ -137,6 +178,9 @@ title: {
     justifyContent: 'center',
     gap: 20,
     marginBottom: 40,
+    position: 'relative',
+    width: '100%',
+    overflow: 'hidden',
   },
   button: {
     fontSize: '2.5rem',
@@ -147,11 +191,31 @@ title: {
     userSelect: 'none',
   },
    image: {
-    width: 1400, // antes 1200, ahora 1400 para agrandar más
-    height: 480, // agrega altura fija para asegurar tamaño grande
-    objectFit: 'cover', // asegura que la imagen se vea bien
-    borderRadius: 48,   // opcional: más redondeado
-    boxShadow: '0 6px 18px rgba(0,0,0,0.13)', // sombra más notoria
+    width: '100%',
+    maxWidth: 1200,
+    height: 480,
+    objectFit: 'cover',
+    borderRadius: 48,
+    boxShadow: '0 6px 18px rgba(0,0,0,0.13)',
+  },
+  carouselButton: {
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    fontSize: '2.2rem',
+    background: 'rgba(255,255,255,0.75)',
+    border: '1px solid rgba(255,255,255,0.9)',
+    color: '#0079B5',
+    cursor: 'pointer',
+    userSelect: 'none',
+    borderRadius: 12,
+    padding: '4px 10px',
+  },
+  carouselButtonLeft: {
+    left: 12,
+  },
+  carouselButtonRight: {
+    right: 12,
   },
   subtitle: {
     fontWeight: 'bold',
@@ -183,22 +247,85 @@ title: {
     borderRadius: 20,
     boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
   },
-    heroSection: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center', // centra el contenido horizontalmente
-    gap: '80px',              // más espacio entre card y celular
-    flexWrap: 'wrap',
+  heroWrapper: {
+    background: 'linear-gradient(180deg, rgba(0,121,181,0.08) 0%, rgba(0,121,181,0.02) 100%)',
+    borderRadius: '32px',
+    padding: '80px 24px',
     marginTop: '60px',
-    padding: '20px 0',
+    position: 'relative',
+    overflow: 'hidden',
   },
 
- phoneMockup: {
-    maxWidth: '380px',        // agranda la imagen del celular
+  heroSection: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '48px',
+    flexWrap: 'wrap',
+    margin: '0 auto',
+    maxWidth: '1200px',
+    padding: '0',
+  },
+
+  phoneWrapper: {
+    position: 'relative',
+    perspective: '1000px',
+    width: '420px',
+    maxWidth: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  phoneMockup: {
+    maxWidth: '380px',  
     width: '100%',
     height: 'auto',
     flexShrink: 0,
     borderRadius: '24px',
+    transition: 'transform 180ms ease',
+    willChange: 'transform',
+  },
+
+  phoneGlow: {
+    position: 'absolute',
+    width: '420px',
+    height: '420px',
+    borderRadius: '50%',
+    background: 'radial-gradient(circle at 50% 50%, rgba(0,121,181,0.35), rgba(0,121,181,0) 60%)',
+    filter: 'blur(40px)',
+    zIndex: 0,
+  },
+
+  badge: {
+    position: 'absolute',
+    zIndex: 2,
+    background: 'rgba(255,255,255,0.6)',
+    backdropFilter: 'blur(8px)',
+    WebkitBackdropFilter: 'blur(8px)',
+    border: '1px solid rgba(255,255,255,0.8)',
+    boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+    color: '#0B3B53',
+    fontWeight: '700',
+    fontSize: '0.9rem',
+    padding: '10px 14px',
+    borderRadius: '999px',
+    animation: 'floatUpDown 4s ease-in-out infinite alternate',
+  },
+
+  badgeTopLeft: {
+    top: '-6px',
+    left: '-6px',
+  },
+  badgeTopRight: {
+    top: '12%',
+    right: '-10px',
+    animationDuration: '5s',
+  },
+  badgeBottomLeft: {
+    bottom: '-6px',
+    left: '8%',
+    animationDuration: '6s',
   },
 subtitleCenter: {
     fontWeight: 'bold',
