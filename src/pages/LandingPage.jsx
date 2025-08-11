@@ -4,6 +4,8 @@ import img2 from '../assets/image 4.png';
 import img3 from '../assets/image 5.png';
 import img4 from '../assets/Slide Image.png';
 import img5 from '../assets/Slide Item — 2.png';
+import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
+import iPhoneMockup from '../assets/iPhoneMockup.png';
 const LandingPage = () => {
   return (
     <div style={styles.bg}>
@@ -111,6 +113,32 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+    
+      {/* Sección de presentación institucional */}
+      <section style={styles.presentationSection}>
+        <div style={styles.presentationText}>
+          <h2 style={styles.presentationTitle}>CONOCÉ SOLVY</h2>
+          <p style={styles.presentationParagraph}>
+            Somos Solvy, una plataforma creada por alumnos de 5to año de Informática de ORT. Nuestro objetivo es conectar trabajadores independientes con clientes, facilitando el acceso a servicios de calidad y brindando oportunidades de crecimiento profesional.
+          </p>
+          <p style={styles.presentationParagraph}>
+            Creemos en la tecnología como motor de inclusión y progreso. Por eso, desarrollamos una solución simple, segura y eficiente para que puedas ofrecer tus servicios, encontrar nuevos clientes y gestionar tu trabajo de manera profesional.
+          </p>
+          <p style={styles.presentationParagraph}>
+            Sumate a Solvy y formá parte de una comunidad que valora el esfuerzo, la confianza y la innovación.
+          </p>
+        </div>
+        <div style={styles.presentationImageBox}>
+          <img src={logo} alt="Logo Solvy" style={styles.presentationLogo} />
+          <div style={styles.presentationBox}>
+            <h3 style={styles.presentationBoxTitle}>Sobre Nosotros</h3>
+            <p style={styles.presentationBoxText}>
+              Somos un equipo joven, apasionado por la tecnología y el impacto social. Creamos Solvy como proyecto final de nuestra formación en ORT, con la visión de ayudar a miles de personas a crecer con su trabajo.
+            </p>
+          </div>
+        </div>
+      </section>
+       
       </main>
 
       </div>
@@ -246,10 +274,10 @@ const styles = {
     zIndex: 2,
     objectFit: 'cover',
   },
-   howItWorksSection: {
+  howItWorksSection: {
     background: '#fff',
     padding: '60px 5vw 60px 5vw',
-    marginTop: 300,
+    marginTop: 200, // Antes: 300
     textAlign: 'center',
   },
   howItWorksTitle: {
@@ -402,10 +430,10 @@ const styles = {
       maxWidth: '98%',
     },
   },
-   categoriesSection: {
+       categoriesSection: {
     background: '#f6fbfc',
-    padding: '60px 5vw 60px 5vw',
-    marginTop: 10,
+    padding: '40px 5vw 60px 5vw', // Antes: '60px 5vw 60px 5vw'
+    marginTop: 0,
     textAlign: 'center',
   },
   categoriesTitle: {
@@ -449,6 +477,125 @@ const styles = {
     color: '#0079B5',
     fontSize: '1.12rem',
     marginTop: 5,
+  },
+    presentationSection: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    gap: 48,
+    background: '#f6fbfc',
+    padding: '60px 5vw 60px 5vw',
+    marginTop: 60,
+    flexWrap: 'wrap',
+  },
+  presentationText: {
+    flex: 2,
+    minWidth: 280,
+    maxWidth: 600,
+  },
+  presentationTitle: {
+    fontSize: '2.3rem',
+    fontWeight: 700,
+    color: '#1d3443',
+    marginBottom: 24,
+    letterSpacing: 1,
+  },
+  presentationParagraph: {
+    fontSize: '1.13rem',
+    color: '#37474F',
+    marginBottom: 18,
+    lineHeight: 1.6,
+  },
+  presentationImageBox: {
+    flex: 1.2,
+    minWidth: 320,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 24,
+  },
+   presentationLogo: {
+    width: 180,
+    height: 180,
+    objectFit: 'contain',
+    borderRadius: '50%',
+    background: '#fff',
+    marginBottom: 12,
+    border: '2px solid #0079B5', 
+    boxSizing: 'border-box',
+  },
+  presentationBox: {
+    background: ' #0079B5',
+    borderRadius: 18,
+    padding: '32px 28px',
+    color: '#fff',
+    boxShadow: '0 4px 24px #0079B522',
+    width: '100%',
+    maxWidth: 340,
+    textAlign: 'left',
+    marginBottom: 60
+  },
+  presentationBoxTitle: {
+    fontSize: '1.35rem',
+    fontWeight: 700,
+    marginBottom: 12,
+    color: '#fff',
+  },
+  presentationBoxText: {
+    fontSize: '1.05rem',
+    color: '#e0f7fa',
+    lineHeight: 1.5,
+  },  
+appSection: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 48,
+    background: '#fff',
+    padding: '60px 5vw 60px 5vw',
+    marginTop: 0,
+    flexWrap: 'wrap',
+  },
+  appInfo: {
+    flex: 2,
+    minWidth: 260,
+    maxWidth: 540,
+  },
+  appTitle: {
+    fontSize: '2rem',
+    fontWeight: 700,
+    color: '#1d3443',
+    marginBottom: 18,
+  },
+  appText: {
+    fontSize: '1.13rem',
+    color: '#37474F',
+    marginBottom: 18,
+    lineHeight: 1.6,
+  },
+  appList: {
+    fontSize: '1.08rem',
+    color: '#0079B5',
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    lineHeight: 2,
+    fontWeight: 500,
+  },
+  appImageBox: {
+    flex: 1.2,
+    minWidth: 220,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  appImage: {
+    width: 220,
+    height: 'auto',
+    objectFit: 'contain',
+    boxShadow: '0 8px 32px #0079B533',
+    borderRadius: 32,
+    background: '#f6fbfc',
   },
 };
 

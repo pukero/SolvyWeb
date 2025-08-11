@@ -90,11 +90,12 @@ const styles = {
     padding: '60px 5vw 30px 5vw',
   },
   mainSection: {
-    display: 'grid',
-    gridTemplateColumns: '1.3fr 1fr 1fr', // 🔹 Más equilibrado
-    gap: '30px', // 🔹 Más cerca entre columnas
+    display: 'flex', // Cambia de 'grid' a 'flex'
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    gap: '30px',
     marginBottom: '40px',
-    alignItems: 'start',
   },
   brandSection: {
     display: 'flex',
@@ -140,8 +141,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '10px',
-    alignItems: 'center', // 🔹 Centrado
-    textAlign: 'center',  // 🔹 Centrado
+    
   },
   sectionTitle: {
     fontSize: '1.1rem',
@@ -156,12 +156,12 @@ const styles = {
     transition: 'color 0.3s',
     padding: '4px 0',
   },
-  contactSection: {
+ contactSection: {
     display: 'flex',
     flexDirection: 'column',
     gap: '12px',
-    alignItems: 'center', // 🔹 Centrado
-    textAlign: 'center',  // 🔹 Centrado
+    
+    minWidth: 180, // Opcional: asegura ancho mínimo para alinear
   },
   contactItem: {
     display: 'flex',

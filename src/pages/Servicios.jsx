@@ -166,22 +166,33 @@ const styles = {
   width: '100%',
   overflowX: 'hidden',
 },
+container: {
+  maxWidth: 1200,
+  margin: '0 auto', // Antes: '-5px auto', ahora bien arriba y centrado
+  padding: '0 20px 20px 20px', // Padding arriba en 0
+  textAlign: 'center',
+  color: '#0079B5',
+  width: '100%',
+  overflowX: 'hidden',
+},
 title: {
   fontSize: '4rem',
-  marginBottom: 60,    // antes 40px, ahora 28px para acercar más
+  marginTop: 24,      // Nuevo: sube el título
+  marginBottom: 30,   // Más cerca del carousel
   fontWeight: '700',
   textTransform: 'uppercase',
 },
-  carousel: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 20,
-    marginBottom: 40,
-    position: 'relative',
-    width: '100%',
-    overflow: 'hidden',
-  },
+carousel: {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 20,
+  marginBottom: 40,
+  marginTop: 0,       // Nuevo: elimina espacio arriba del carousel
+  position: 'relative',
+  width: '100%',
+  overflow: 'hidden',
+},
   button: {
     fontSize: '2.5rem',
     backgroundColor: 'transparent',
@@ -190,10 +201,10 @@ title: {
     cursor: 'pointer',
     userSelect: 'none',
   },
-   image: {
+    image: {
     width: '100%',
     maxWidth: 1200,
-    height: 480,
+    height: 600, // antes 480, ahora más alto
     objectFit: 'cover',
     borderRadius: 48,
     boxShadow: '0 6px 18px rgba(0,0,0,0.13)',
