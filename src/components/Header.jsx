@@ -1,8 +1,72 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { supabase } from '../supabaseClient';
 import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
 
 const Header = () => {
+  const [user, setUser] = useState(null);
+  const [fotoUrl, setFotoUrl] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const stored = localStorage.getItem('solvyUser');
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        setUser(parsed);
+        if (parsed.fotopersonal) {
+          // Si ya es una URL absoluta, úsala directamente
+          if (parsed.fotopersonal.startsWith('http')) {
+            setFotoUrl(parsed.fotopersonal);
+          } else {
+            // Si es una ruta relativa, genera la URL pública
+            const { publicURL } = supabase.storage.from('foto-perfil').getPublicUrl(parsed.fotopersonal);
+            setFotoUrl(publicURL);
+          }
+        } else {
+          setFotoUrl(null);
+        }
+      } catch {
+        setUser(null);
+        setFotoUrl(null);
+      }
+    } else {
+      setUser(null);
+      setFotoUrl(null);
+    }
+  }, []);
+
+  // Si el usuario cambia (login/logout en otra pestaña)
+  useEffect(() => {
+    const onStorage = () => {
+      const stored = localStorage.getItem('solvyUser');
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          setUser(parsed);
+          if (parsed.fotopersonal) {
+            if (parsed.fotopersonal.startsWith('http')) {
+              setFotoUrl(parsed.fotopersonal);
+            } else {
+              const { publicURL } = supabase.storage.from('foto-perfil').getPublicUrl(parsed.fotopersonal);
+              setFotoUrl(publicURL);
+            }
+          } else {
+            setFotoUrl(null);
+          }
+        } catch {
+          setUser(null);
+          setFotoUrl(null);
+        }
+      } else {
+        setUser(null);
+        setFotoUrl(null);
+      }
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+  }, []);
+
   return (
     <header style={styles.header}>
       <div style={styles.logoBrand}>
@@ -12,13 +76,28 @@ const Header = () => {
       </div>
       <nav style={styles.nav}>
         <Link to="/solver" style={styles.link}>Solver</Link>
-        
         <Link to="/servicios" style={styles.link}>Servicios</Link>
         <Link to="/contacto" style={styles.link}>Contacto</Link>
       </nav>
       <div style={styles.actions}>
-        <Link to="/login" style={styles.loginBtn}>Login</Link>
-        <Link to="/registrarse" style={styles.signUpBtn}>Registrarse</Link>
+        {user ? (
+          fotoUrl ? (
+            <img
+              src={fotoUrl}
+              alt="Perfil"
+              style={styles.profilePic}
+              onClick={() => navigate('/perfil')}
+              title="Ver perfil"
+            />
+          ) : (
+            <span style={{color:'#0079B5', fontWeight:600}}>Mi perfil</span>
+          )
+        ) : (
+          <>
+            <Link to="/login" style={styles.loginBtn}>Login</Link>
+            <Link to="/registrarse" style={styles.signUpBtn}>Registrarse</Link>
+          </>
+        )}
       </div>
     </header>
   );
@@ -95,7 +174,17 @@ const styles = {
     textDecoration: 'none',
     fontSize: '1.01rem',
     border: 'none'
-  }
-  };
+  },
+  profilePic: {
+    width: 44,
+    height: 44,
+    borderRadius: '50%',
+    objectFit: 'cover',
+    cursor: 'pointer',
+    border: '2px solid #0079B5',
+    boxShadow: '0 2px 8px #0079B522',
+    transition: 'box-shadow 0.2s',
+  },
+};
 
 export default Header;
