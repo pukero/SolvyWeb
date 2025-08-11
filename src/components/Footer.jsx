@@ -91,10 +91,10 @@ const styles = {
   },
   mainSection: {
     display: 'grid',
-    gridTemplateColumns: '2fr 1fr 1fr',
-    gap: '40px',
+    gridTemplateColumns: '1.3fr 1fr 1fr', // 🔹 Más equilibrado
+    gap: '30px', // 🔹 Más cerca entre columnas
     marginBottom: '40px',
-    alignItems: 'start', // 🔹 Alinea todo arriba
+    alignItems: 'start',
   },
   brandSection: {
     display: 'flex',
@@ -139,7 +139,9 @@ const styles = {
   linksSection: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '10px', // 🔹 Más compacto
+    gap: '10px',
+    alignItems: 'center', // 🔹 Centrado
+    textAlign: 'center',  // 🔹 Centrado
   },
   sectionTitle: {
     fontSize: '1.1rem',
@@ -158,6 +160,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '12px',
+    alignItems: 'center', // 🔹 Centrado
+    textAlign: 'center',  // 🔹 Centrado
   },
   contactItem: {
     display: 'flex',
@@ -206,3 +210,6 @@ const styles = {
 };
 
 export default Footer;
+
+
+
