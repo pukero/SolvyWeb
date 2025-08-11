@@ -1,5 +1,9 @@
 import React from 'react';
-
+import img1 from '../assets/Que-habilidades-debe-tener-un-electricista 1 (1).png';
+import img2 from '../assets/image 4.png';
+import img3 from '../assets/image 5.png';
+import img4 from '../assets/Slide Image.png';
+import img5 from '../assets/Slide Item — 2.png';
 const LandingPage = () => {
   return (
     <div style={styles.bg}>
@@ -61,7 +65,52 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-    
+     {/* Nueva sección de categorías populares */}
+       <section style={styles.categoriesSection}>
+        <h2 style={styles.categoriesTitle}>Servicios más buscados</h2>
+        <div style={styles.categoriesContainer}>
+          <div style={styles.categoryCard}>
+            <img
+              src={img1}
+              alt="Electricista"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Electricista</span>
+          </div>
+          <div style={styles.categoryCard}>
+            <img
+              src={img2}
+              alt="Plomero"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Plomero</span>
+          </div>
+          <div style={styles.categoryCard}>
+            <img
+              src={img3}
+              alt="Instalador"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Instalador</span>
+          </div>
+          <div style={styles.categoryCard}>
+            <img
+              src={img4}
+              alt="Pintor"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Pintor</span>
+          </div>
+          <div style={styles.categoryCard}>
+            <img
+              src={img5}
+              alt="Mudancero"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Mudancero</span>
+          </div>
+        </div>
+      </section>
       </main>
 
       </div>
@@ -352,6 +401,54 @@ const styles = {
       padding: '12px 4px',
       maxWidth: '98%',
     },
+  },
+   categoriesSection: {
+    background: '#f6fbfc',
+    padding: '60px 5vw 60px 5vw',
+    marginTop: 10,
+    textAlign: 'center',
+  },
+  categoriesTitle: {
+    fontSize: '2rem',
+    fontWeight: 700,
+    color: '#1d3443',
+    marginBottom: 50,
+  },
+  categoriesContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: 40,
+    flexWrap: 'wrap',
+  },
+ categoryCard: {
+    background: '#fff',
+    borderRadius: '50%',
+    padding: 0,
+    width: 210,
+    height: 210,
+    boxShadow: '0 4px 24px #e0e7ef22',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 10,
+    justifyContent: 'center',
+    margin: '16px',
+    overflow: 'hidden',
+  },
+  categoryImg: {
+    width: 160,
+    height: 160,
+    objectFit: 'cover',
+    borderRadius: '50%',
+    marginBottom: 8,
+    boxShadow: '0 2px 8px #0079B522',
+  },
+  categoryName: {
+    fontWeight: 600,
+    color: '#0079B5',
+    fontSize: '1.12rem',
+    marginTop: 5,
   },
 };
 
