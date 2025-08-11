@@ -450,7 +450,6 @@ const styles = {
   },
  categoryCard: {
     background: '#fff',
-    borderRadius: '50%',
     padding: 0,
     width: 210,
     height: 210,
@@ -521,7 +520,7 @@ const styles = {
     borderRadius: '50%',
     background: '#fff',
     marginBottom: 12,
-    border: '2px solid #0079B5', 
+    border: '2px solid #0077ff91', 
     boxSizing: 'border-box',
   },
   presentationBox: {

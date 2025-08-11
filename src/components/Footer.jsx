@@ -5,7 +5,7 @@ import vectorIcon from '../assets/Vector.png';
 import groupIcon from '../assets/Group.png';
 import emailIcon from '../assets/Vector (1).png';
 import phoneIcon from '../assets/Vector (2).png';
-
+import Ubicacion from '../assets/Ubicacion.png';
 const Footer = () => {
   return (
     <footer style={styles.footer}>
@@ -29,6 +29,7 @@ const Footer = () => {
               <a href="#" style={styles.socialLink}>
                 <img src={emailIcon} alt="Email" style={styles.socialIcon} />
               </a>
+             
             </div>
           </div>
 
@@ -53,6 +54,9 @@ const Footer = () => {
               <span style={styles.contactText}>Solvy@gmail.com</span>
             </div>
             <div style={styles.contactItem}>
+               
+                <img src={Ubicacion} alt="Ubicacion" style={styles.socialIcon} />
+              
               <span style={styles.contactText}>Buenos Aires, Argentina</span>
             </div>
           </div>
@@ -128,7 +132,6 @@ const styles = {
     justifyContent: 'center',
     width: '40px',
     height: '40px',
-    background: '#0079B5',
     borderRadius: '50%',
     transition: 'background 0.3s, transform 0.2s',
   },
