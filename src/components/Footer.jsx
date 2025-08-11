@@ -41,15 +41,6 @@ const Footer = () => {
             <Link to="/login" style={styles.footerLink}>Iniciar Sesión</Link>
           </div>
 
-          {/* Servicios */}
-          <div style={styles.linksSection}>
-            <h3 style={styles.sectionTitle}>Servicios</h3>
-            <a href="#" style={styles.footerLink}>Limpieza Residencial</a>
-            <a href="#" style={styles.footerLink}>Limpieza Comercial</a>
-            <a href="#" style={styles.footerLink}>Limpieza Industrial</a>
-            <a href="#" style={styles.footerLink}>Mantenimiento</a>
-          </div>
-
           {/* Contacto */}
           <div style={styles.contactSection}>
             <h3 style={styles.sectionTitle}>Contacto</h3>
@@ -100,7 +91,7 @@ const styles = {
   },
   mainSection: {
     display: 'grid',
-    gridTemplateColumns: '2fr 1fr 1fr 1fr',
+    gridTemplateColumns: '2fr 1fr 1fr',
     gap: '40px',
     marginBottom: '40px',
   },
@@ -108,11 +99,15 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '20px',
+    alignItems: 'flex-start',
   },
   logo: {
-    height: '50px',
+    height: '60px',
     width: 'auto',
+    maxWidth: '180px',
+    objectFit: 'contain',
     filter: 'brightness(0) invert(1)',
+    marginBottom: '8px',
   },
   description: {
     fontSize: '0.95rem',
