@@ -2,44 +2,65 @@ import React, { useState } from 'react';
 import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
 
 const Login = () => {
-  const handleSubmit = (e) => {
+  const [usuario, setUsuario] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch(`https://solvy-app-api.vercel.app/sol/solvers/${usuario}/${password}`);
+      if (!res.ok) throw new Error('Usuario o contraseña incorrectos');
+      const data = await res.json();
+      // Guardar usuario en localStorage (puedes guardar token si la API lo devuelve)
+      localStorage.setItem('solvyUser', JSON.stringify(data));
+      window.location.href = '/'; // Redirige al home
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div style={styles.bg}>
       <div style={styles.card}>
-          <img src={logo} alt="Logo" style={styles.logo} />
-          <h2 style={styles.title}>Bienvenido a Solvy</h2>
-          <p style={styles.subtitle}>Inicia sesión para continuar</p>
+        <img src={logo} alt="Logo" style={styles.logo} />
+        <h2 style={styles.title}>Bienvenido a Solvy</h2>
+        <p style={styles.subtitle}>Inicia sesión para continuar</p>
         <form style={styles.form} onSubmit={handleSubmit}>
           <div style={styles.inputGroup}>
             <input
               type="text"
               name="usuario"
               style={styles.input}
-              placeholder="Usuario"
+              placeholder="Usuario (email o DNI)"
+              value={usuario}
+              onChange={e => setUsuario(e.target.value)}
               required
             />
           </div>
           <div style={styles.inputGroup}>
             <input
-              type={"password"}
+              type="password"
               name="password"
               style={styles.input}
               placeholder="Contraseña"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
               required
             />
-            <button
-              type="button"
-              style={styles.showBtn}
-            >
-            </button>
           </div>
-          <button type="submit" style={styles.button}>Ingresar</button>
+          {error && <div style={{ color: 'red', marginBottom: 10 }}>{error}</div>}
+          <button type="submit" style={styles.button} disabled={loading}>
+            {loading ? 'Ingresando...' : 'Ingresar'}
+          </button>
         </form>
         <div style={styles.footer}>
-          <a href="#" style={styles.link}>¿Olvidaste tu contraseña?</a>
+          <a href="/registrarse" style={styles.link}>¿No tenés cuenta? Registrate</a>
         </div>
       </div>
     </div>

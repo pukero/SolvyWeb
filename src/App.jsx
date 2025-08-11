@@ -7,6 +7,8 @@ import Login from './pages/Login';
 import Registrarse from './pages/Registrarse';
 import Servicios from './pages/Servicios';
 import Solver from './pages/Solver'; 
+import Perfil from './pages/Perfil';
+
 function App() {
   return (
     <BrowserRouter>
@@ -14,11 +16,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<LandingPage />} />
           <Route path="contacto" element={<Contacto />} />
-                  <Route path="login" element={<Login />} />
-                  <Route path="registrarse" element={<Registrarse/>} />
-                  <Route path="servicios" element={<Servicios/>} />
+          <Route path="login" element={<Login />} />
+          <Route path="registrarse" element={<Registrarse/>} />
+          <Route path="servicios" element={<Servicios/>} />
           <Route path="solver" element={<Solver/>} />
-
+          <Route path="perfil" element={<Perfil/>} />
         </Route>
       </Routes>
     </BrowserRouter>
