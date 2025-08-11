@@ -310,7 +310,6 @@ title: {
     fontSize: '0.9rem',
     padding: '10px 14px',
     borderRadius: '999px',
-    animation: 'floatUpDown 4s ease-in-out infinite alternate',
   },
 
   badgeTopLeft: {

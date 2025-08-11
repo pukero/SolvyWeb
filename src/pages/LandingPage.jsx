@@ -1,5 +1,9 @@
 import React from 'react';
-
+import img1 from '../assets/Que-habilidades-debe-tener-un-electricista 1 (1).png';
+import img2 from '../assets/image 4.png';
+import img3 from '../assets/image 5.png';
+import img4 from '../assets/Slide Image.png';
+import img5 from '../assets/Slide Item — 2.png';
 const LandingPage = () => {
   return (
     <div style={styles.bg}>
@@ -38,9 +42,78 @@ const LandingPage = () => {
               style={styles.imgOverlap}
             />
           </div>
+          
         </section>
+        {/* Nueva sección horizontal debajo del main */}
+      <section style={styles.howItWorksSection}>
+        <h2 style={styles.howItWorksTitle}>¿Cómo funciona?</h2>
+        <div style={styles.stepsContainer}>
+          <div style={styles.step}>
+            <span style={styles.stepNumber}>1</span>
+            <h3 style={styles.stepTitle}>Registrate gratis</h3>
+            <p style={styles.stepDesc}>Crea tu cuenta en minutos y completá tu perfil profesional.</p>
+          </div>
+          <div style={styles.step}>
+            <span style={styles.stepNumber}>2</span>
+            <h3 style={styles.stepTitle}>Publicá tus servicios</h3>
+            <p style={styles.stepDesc}>Mostrá lo que sabés hacer y empezá a recibir solicitudes de clientes.</p>
+          </div>
+          <div style={styles.step}>
+            <span style={styles.stepNumber}>3</span>
+            <h3 style={styles.stepTitle}>Ganá por cada trabajo</h3>
+            <p style={styles.stepDesc}>Elegí cuándo trabajar y cobrá por cada servicio realizado.</p>
+          </div>
+        </div>
+      </section>
+     {/* Nueva sección de categorías populares */}
+       <section style={styles.categoriesSection}>
+        <h2 style={styles.categoriesTitle}>Servicios más buscados</h2>
+        <div style={styles.categoriesContainer}>
+          <div style={styles.categoryCard}>
+            <img
+              src={img1}
+              alt="Electricista"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Electricista</span>
+          </div>
+          <div style={styles.categoryCard}>
+            <img
+              src={img2}
+              alt="Plomero"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Plomero</span>
+          </div>
+          <div style={styles.categoryCard}>
+            <img
+              src={img3}
+              alt="Instalador"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Instalador</span>
+          </div>
+          <div style={styles.categoryCard}>
+            <img
+              src={img4}
+              alt="Pintor"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Pintor</span>
+          </div>
+          <div style={styles.categoryCard}>
+            <img
+              src={img5}
+              alt="Mudancero"
+              style={styles.categoryImg}
+            />
+            <span style={styles.categoryName}>Mudancero</span>
+          </div>
+        </div>
+      </section>
       </main>
-    </div>
+
+      </div>
   );
 };
 
@@ -50,12 +123,13 @@ const styles = {
     minHeight: '100vh',
     fontFamily: "'Poppins', 'Segoe UI', Arial, sans-serif"
   },
-  main: {
+   main: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '48px 5vw 0 5vw',
-    gap: '5vw'
+    justifyContent: 'center',
+    padding: '32px 2vw 0 2vw',
+    gap: '4vw',
+    flexWrap: 'wrap', // Permite que las columnas bajen en pantallas chicas
   },
   left: {
     flex: 1.3,
@@ -138,7 +212,6 @@ const styles = {
     flex: 1,
     position: 'relative',
     minWidth: 350,
-    display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 370,
@@ -172,7 +245,211 @@ const styles = {
     boxShadow: '0 6px 22px #2ca3c72a',
     zIndex: 2,
     objectFit: 'cover',
-  }
+  },
+   howItWorksSection: {
+    background: '#fff',
+    padding: '60px 5vw 60px 5vw',
+    marginTop: 300,
+    textAlign: 'center',
+  },
+  howItWorksTitle: {
+    fontSize: '2.2rem',
+    fontWeight: 700,
+    color: '#1d3443',
+    marginBottom: 38,
+  },
+  stepsContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: 50,
+    flexWrap: 'wrap',
+  },
+  step: {
+    background: '#f6fbfc',
+    borderRadius: 18,
+    padding: '32px 28px',
+    maxWidth: 300,
+    boxShadow: '0 4px 24px #e0e7ef22',
+    textAlign: 'center',
+  },
+  stepNumber: {
+    display: 'inline-block',
+    background: '#0079B5',
+    color: '#fff',
+    borderRadius: '50%',
+    width: 38,
+    height: 38,
+    lineHeight: '38px',
+    fontWeight: 700,
+    fontSize: '1.3rem',
+    marginBottom: 12,
+  },
+  stepTitle: {
+    fontSize: '1.18rem',
+    fontWeight: 600,
+    color: '#1d3443',
+    marginBottom: 8,
+  },
+  stepDesc: {
+    fontSize: '1rem',
+    color: '#37474F',
+  },
+  '@media (max-width: 1200px)': {
+    main: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 40,
+      padding: '32px 3vw 0 3vw',
+    },
+    right: {
+      minWidth: 'unset',
+      width: '100%',
+      minHeight: 260,
+      marginTop: 32,
+      justifyContent: 'center',
+    },
+    imagesContainer: {
+      width: '100%',
+      maxWidth: 420,
+      height: 260,
+      minWidth: 0,
+    },
+    imgMain: {
+      position: 'relative',
+      top: 40,
+      right: 0,
+      width: '90vw',
+      maxWidth: 320,
+      minWidth: 180,
+    },
+    imgOverlap: {
+      position: 'relative',
+      top: -40,
+      right: 0,
+      width: '90vw',
+      maxWidth: 320,
+      minWidth: 180,
+    },
+    howItWorksSection: {
+      marginTop: 80,
+      padding: '40px 3vw',
+    },
+    stepsContainer: {
+      gap: 30,
+    },
+  },
+  '@media (max-width: 700px)': {
+    main: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 24,
+      padding: '18px 2vw 0 2vw',
+    },
+    left: {
+      gap: 14,
+    },
+    title: {
+      fontSize: '1.6rem',
+    },
+    subtitle: {
+      fontSize: '0.98rem',
+      maxWidth: '100%',
+    },
+    form: {
+      maxWidth: '100%',
+      flexDirection: 'column',
+      gap: 8,
+      padding: '6px',
+    },
+    ctaBtn: {
+      width: '100%',
+      justifyContent: 'center',
+    },
+    right: {
+      minHeight: 120,
+      marginTop: 16,
+    },
+    imagesContainer: {
+      width: '100%',
+      maxWidth: 200,
+      height: 110,
+      minWidth: 0,
+    },
+    imgMain: {
+      width: '90vw',
+      maxWidth: 120,
+      minWidth: 80,
+      top: 18,
+    },
+    imgOverlap: {
+      width: '90vw',
+      maxWidth: 120,
+      minWidth: 80,
+      top: -18,
+    },
+    howItWorksSection: {
+      marginTop: 40,
+      padding: '18px 2vw',
+    },
+    howItWorksTitle: {
+      fontSize: '1.1rem',
+    },
+    stepsContainer: {
+      gap: 10,
+    },
+    step: {
+      padding: '12px 4px',
+      maxWidth: '98%',
+    },
+  },
+   categoriesSection: {
+    background: '#f6fbfc',
+    padding: '60px 5vw 60px 5vw',
+    marginTop: 10,
+    textAlign: 'center',
+  },
+  categoriesTitle: {
+    fontSize: '2rem',
+    fontWeight: 700,
+    color: '#1d3443',
+    marginBottom: 50,
+  },
+  categoriesContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: 40,
+    flexWrap: 'wrap',
+  },
+ categoryCard: {
+    background: '#fff',
+    borderRadius: '50%',
+    padding: 0,
+    width: 210,
+    height: 210,
+    boxShadow: '0 4px 24px #e0e7ef22',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 10,
+    justifyContent: 'center',
+    margin: '16px',
+    overflow: 'hidden',
+  },
+  categoryImg: {
+    width: 160,
+    height: 160,
+    objectFit: 'cover',
+    borderRadius: '50%',
+    marginBottom: 8,
+    boxShadow: '0 2px 8px #0079B522',
+  },
+  categoryName: {
+    fontWeight: 600,
+    color: '#0079B5',
+    fontSize: '1.12rem',
+    marginTop: 5,
+  },
 };
 
 export default LandingPage;

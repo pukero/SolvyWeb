@@ -41,15 +41,6 @@ const Footer = () => {
             <Link to="/login" style={styles.footerLink}>Iniciar Sesión</Link>
           </div>
 
-          {/* Servicios */}
-          <div style={styles.linksSection}>
-            <h3 style={styles.sectionTitle}>Servicios</h3>
-            <a href="#" style={styles.footerLink}>Limpieza Residencial</a>
-            <a href="#" style={styles.footerLink}>Limpieza Comercial</a>
-            <a href="#" style={styles.footerLink}>Limpieza Industrial</a>
-            <a href="#" style={styles.footerLink}>Mantenimiento</a>
-          </div>
-
           {/* Contacto */}
           <div style={styles.contactSection}>
             <h3 style={styles.sectionTitle}>Contacto</h3>
@@ -100,19 +91,24 @@ const styles = {
   },
   mainSection: {
     display: 'grid',
-    gridTemplateColumns: '2fr 1fr 1fr 1fr',
-    gap: '40px',
+    gridTemplateColumns: '1.3fr 1fr 1fr', // 🔹 Más equilibrado
+    gap: '30px', // 🔹 Más cerca entre columnas
     marginBottom: '40px',
+    alignItems: 'start',
   },
   brandSection: {
     display: 'flex',
     flexDirection: 'column',
     gap: '20px',
+    alignItems: 'flex-start',
   },
   logo: {
-    height: '50px',
+    height: '60px',
     width: 'auto',
+    maxWidth: '180px',
+    objectFit: 'contain',
     filter: 'brightness(0) invert(1)',
+    marginBottom: '8px',
   },
   description: {
     fontSize: '0.95rem',
@@ -143,13 +139,15 @@ const styles = {
   linksSection: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '12px',
+    gap: '10px',
+    alignItems: 'center', // 🔹 Centrado
+    textAlign: 'center',  // 🔹 Centrado
   },
   sectionTitle: {
     fontSize: '1.1rem',
     fontWeight: 600,
     color: '#ffffff',
-    marginBottom: '16px',
+    marginBottom: '10px',
   },
   footerLink: {
     color: '#b0bec5',
@@ -161,12 +159,14 @@ const styles = {
   contactSection: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '16px',
+    gap: '12px',
+    alignItems: 'center', // 🔹 Centrado
+    textAlign: 'center',  // 🔹 Centrado
   },
   contactItem: {
     display: 'flex',
     alignItems: 'center',
-    gap: '12px',
+    gap: '10px',
   },
   contactIcon: {
     height: '16px',
@@ -180,7 +180,7 @@ const styles = {
   divider: {
     height: '1px',
     background: 'linear-gradient(90deg, transparent, #0079B5, transparent)',
-    margin: '40px 0',
+    margin: '30px 0',
   },
   bottomSection: {
     display: 'flex',
@@ -210,3 +210,6 @@ const styles = {
 };
 
 export default Footer;
+
+
+
