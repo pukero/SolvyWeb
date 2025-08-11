@@ -5,6 +5,11 @@ const Solver = () => {
   return (
     <div style={styles.pageBg}>
       
+      {/* Main title section */}
+      <div style={styles.container}>
+        <h1 style={styles.title}>Solver</h1>
+      </div>
+      
       {/* Sección de app móvil con iPhoneMockup, separada y centrada */}
       <section style={styles.appSection}>
         
@@ -41,12 +46,12 @@ const styles = {
     textAlign: 'center',
   },
   title: {
-    color: '#0079B5',
-    fontWeight: 700,
-    fontSize: '2.2rem',
-    marginBottom: 18,
-    marginTop: 0,
-    letterSpacing: 1,
+    fontSize: '4rem',
+    marginTop: 24,
+    marginBottom: 30,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    color: '#1d3443',
   },
   intro: {
     fontSize: '1.1rem',
