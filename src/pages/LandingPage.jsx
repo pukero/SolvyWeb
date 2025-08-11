@@ -293,11 +293,9 @@ const styles = {
     flexWrap: 'wrap',
   },
   step: {
-    background: '#f6fbfc',
     borderRadius: 18,
     padding: '32px 28px',
     maxWidth: 300,
-    boxShadow: '0 4px 24px #e0e7ef22',
     textAlign: 'center',
   },
   stepNumber: {
@@ -449,11 +447,9 @@ const styles = {
     flexWrap: 'wrap',
   },
  categoryCard: {
-    background: '#fff',
     padding: 0,
     width: 210,
     height: 210,
-    boxShadow: '0 4px 24px #e0e7ef22',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
