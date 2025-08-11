@@ -74,12 +74,13 @@ const styles = {
     minHeight: '100vh',
     fontFamily: "'Poppins', 'Segoe UI', Arial, sans-serif"
   },
-  main: {
+   main: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '48px 5vw 0 5vw',
-    gap: '5vw'
+    justifyContent: 'center',
+    padding: '32px 2vw 0 2vw',
+    gap: '4vw',
+    flexWrap: 'wrap', // Permite que las columnas bajen en pantallas chicas
   },
   left: {
     flex: 1.3,
@@ -162,7 +163,6 @@ const styles = {
     flex: 1,
     position: 'relative',
     minWidth: 350,
-    display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 370,

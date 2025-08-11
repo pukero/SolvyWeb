@@ -94,6 +94,7 @@ const styles = {
     gridTemplateColumns: '2fr 1fr 1fr',
     gap: '40px',
     marginBottom: '40px',
+    alignItems: 'start', // 🔹 Alinea todo arriba
   },
   brandSection: {
     display: 'flex',
@@ -138,13 +139,13 @@ const styles = {
   linksSection: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '12px',
+    gap: '10px', // 🔹 Más compacto
   },
   sectionTitle: {
     fontSize: '1.1rem',
     fontWeight: 600,
     color: '#ffffff',
-    marginBottom: '16px',
+    marginBottom: '10px',
   },
   footerLink: {
     color: '#b0bec5',
@@ -156,12 +157,12 @@ const styles = {
   contactSection: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '16px',
+    gap: '12px',
   },
   contactItem: {
     display: 'flex',
     alignItems: 'center',
-    gap: '12px',
+    gap: '10px',
   },
   contactIcon: {
     height: '16px',
@@ -175,7 +176,7 @@ const styles = {
   divider: {
     height: '1px',
     background: 'linear-gradient(90deg, transparent, #0079B5, transparent)',
-    margin: '40px 0',
+    margin: '30px 0',
   },
   bottomSection: {
     display: 'flex',
