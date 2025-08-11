@@ -110,7 +110,7 @@ const styles = {
     gap: '20px',
   },
   logo: {
-    height: '50px',
+    height: '120px',
     width: 'auto',
     filter: 'brightness(0) invert(1)',
   },
