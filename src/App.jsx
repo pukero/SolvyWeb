@@ -8,6 +8,7 @@ import Registrarse from './pages/Registrarse';
 import Servicios from './pages/Servicios';
 import Solver from './pages/Solver'; 
 import Perfil from './pages/Perfil';
+import MisServicios from './pages/MisServicios';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="servicios" element={<Servicios/>} />
           <Route path="solver" element={<Solver/>} />
           <Route path="perfil" element={<Perfil/>} />
+          <Route path="mis-servicios" element={<MisServicios/>} />
         </Route>
       </Routes>
     </BrowserRouter>

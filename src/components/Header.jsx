@@ -78,6 +78,9 @@ const Header = () => {
         <Link to="/solver" style={styles.link}>Solver</Link>
         <Link to="/servicios" style={styles.link}>Servicios</Link>
         <Link to="/contacto" style={styles.link}>Contacto</Link>
+        {user && (
+          <Link to="/mis-servicios" style={styles.link}>Mis Servicios</Link>
+        )}
       </nav>
       <div style={styles.actions}>
         {user ? (
