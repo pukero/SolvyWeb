@@ -275,7 +275,7 @@ const styles = {
     objectFit: 'cover',
   },
   howItWorksSection: {
-    background: '#fff',
+    //background: '#fff',
     padding: '60px 5vw 60px 5vw',
     marginTop: 200, // Antes: 300
     textAlign: 'center',
@@ -292,12 +292,12 @@ const styles = {
     gap: 50,
     flexWrap: 'wrap',
   },
-  step: {
-    background: '#f6fbfc',
+step: {
+background: '#e0f3fc',
     borderRadius: 18,
     padding: '32px 28px',
     maxWidth: 300,
-    boxShadow: '0 4px 24px #e0e7ef22',
+    boxShadow: '0 4px 24px #e0e7ef22', // Quita la sombra
     textAlign: 'center',
   },
   stepNumber: {
@@ -415,10 +415,12 @@ const styles = {
       minWidth: 80,
       top: -18,
     },
-    howItWorksSection: {
-      marginTop: 40,
-      padding: '18px 2vw',
-    },
+     howItWorksSection: {
+    //background: '#f6fbfc', // Antes: '#fff'
+    padding: '60px 5vw 60px 5vw',
+    marginTop: 200,
+    textAlign: 'center',
+  },
     howItWorksTitle: {
       fontSize: '1.1rem',
     },
@@ -448,12 +450,12 @@ const styles = {
     gap: 40,
     flexWrap: 'wrap',
   },
- categoryCard: {
-    background: '#fff',
+categoryCard: {
+    // background: '#fff', // Quita el fondo blanco
     padding: 0,
     width: 210,
     height: 210,
-    boxShadow: '0 4px 24px #e0e7ef22',
+    // boxShadow: '0 4px 24px #e0e7ef22', // Quita la sombra
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
@@ -520,7 +522,7 @@ const styles = {
     borderRadius: '50%',
     background: '#fff',
     marginBottom: 12,
-    border: '2px solid #0077ff91', 
+    border: '2px solid #95c7ff91', 
     boxSizing: 'border-box',
   },
   presentationBox: {
