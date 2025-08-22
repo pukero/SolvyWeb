@@ -9,6 +9,7 @@ import Servicios from './pages/Servicios';
 import Solver from './pages/Solver'; 
 import Perfil from './pages/Perfil';
 import MisServicios from './pages/MisServicios';
+import SobreNosotros from './pages/SobreNosotros';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="solver" element={<Solver/>} />
           <Route path="perfil" element={<Perfil/>} />
           <Route path="mis-servicios" element={<MisServicios/>} />
+          <Route path="sobre-nosotros" element={<SobreNosotros/>} />
         </Route>
       </Routes>
     </BrowserRouter>

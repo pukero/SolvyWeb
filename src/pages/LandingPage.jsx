@@ -6,9 +6,11 @@ import img4 from '../assets/Slide Image.png';
 import img5 from '../assets/Slide Item — 2.png';
 import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
 import iPhoneMockup from '../assets/iPhoneMockup.png';
+// import Header from '../components/Header';
 const LandingPage = () => {
   return (
     <div style={styles.bg}>
+  {/* <Header /> */}
       <main style={styles.main}>
         <section style={styles.left}>
           <h1 style={styles.title}>
@@ -146,6 +148,7 @@ const LandingPage = () => {
 };
 
 const styles = {
+  // ...existing styles...
   bg: {
     background: '#f6fbfc',
     minHeight: '100vh',
