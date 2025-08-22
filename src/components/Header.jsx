@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import logo from '../assets/Captura de pantalla 2025-05-23 083352 (1)-Photoroom 5.png';
+import avatarDefault from '../assets/avatar-default.svg';
 
 const Header = () => {
   const [user, setUser] = useState(null);
@@ -84,17 +85,13 @@ const Header = () => {
       </nav>
       <div style={styles.actions}>
         {user ? (
-          fotoUrl ? (
-            <img
-              src={fotoUrl}
-              alt="Perfil"
-              style={styles.profilePic}
-              onClick={() => navigate('/perfil')}
-              title="Ver perfil"
-            />
-          ) : (
-            <span style={{color:'#0079B5', fontWeight:600}}>Mi perfil</span>
-          )
+          <img
+            src={fotoUrl ? fotoUrl : avatarDefault}
+            alt="Perfil"
+            style={styles.profilePic}
+            onClick={() => navigate('/perfil')}
+            title="Ver perfil"
+          />
         ) : (
           <>
             <Link to="/login" style={styles.loginBtn}>Login</Link>
